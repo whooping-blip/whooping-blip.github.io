@@ -5,14 +5,66 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hauptstädte-Trainer</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Hauptstädte-Trainer</h1>
-  <p id="question">Lade Länder-Liste...</p>
-  <label for="inputCity">Antwort:</label>
-  <input type="text" id="inputCity" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
-  <button id="checkBtn">Prüfen</button>
-  <p id="output"></p>
+  <header>
+    <h1>Hauptstädte-Trainer</h1>
+  </header>
+
+  <nav class="main-nav">
+    <button class="nav-btn active" data-section="start">Start</button>
+    <button class="nav-btn" data-section="progress">Fortschritt</button>
+    <button class="nav-btn" data-section="learn">Lernen</button>
+    <button class="nav-btn" data-section="settings">Einstellungen</button>
+  </nav>
+
+  <main id="start" class="section active">
+    <h2>Wähle eine Kategorie</h2>
+    <div class="categories">
+      <button class="category-btn" data-category="all">Alle Länder</button>
+      <button class="category-btn" data-category="europe">Europa</button>
+      <button class="category-btn" data-category="asia">Asien</button>
+      <button class="category-btn" data-category="africa">Afrika</button>
+      <button class="category-btn" data-category="america">Amerika</button>
+      <button class="category-btn" data-category="oceania">Ozeanien</button>
+    </div>
+  </main>
+
+  <main id="quiz" class="section hidden">
+    <div class="quiz-header">
+      <div id="question-category"></div>
+      <div id="progress-bar"><div id="progress-bar-fill"></div></div>
+    </div>
+
+    <div class="quiz-question">
+      <p id="question"></p>
+      <input id="answer-input" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+      <button id="submit-answer">Prüfen</button>
+      <p id="feedback"></p>
+    </div>
+
+    <button id="back-to-start">Zurück zur Auswahl</button>
+  </main>
+
+  <main id="progress" class="section hidden">
+    <h2>Dein Lernfortschritt</h2>
+    <div id="progress-details"></div>
+    <button id="progress-back">Zurück</button>
+  </main>
+
+  <main id="learn" class="section hidden">
+    <h2>Lernmodus (Demo)</h2>
+    <p>Hier kannst du später deine Lernkarten durchgehen.</p>
+    <button id="learn-back">Zurück</button>
+  </main>
+
+  <main id="settings" class="section hidden">
+    <h2>Einstellungen</h2>
+    <p>Einstellungen werden hier gespeichert.</p>
+    <button id="settings-back">Zurück</button>
+  </main>
+
   <script src="app.js" defer></script>
 </body>
 </html>
