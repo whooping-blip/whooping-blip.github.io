@@ -38,32 +38,56 @@
     </div>
 
     <div class="quiz-question">
-      <p id="question"></p>
-      <input id="answer-input" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
-      <button id="submit-answer">Prüfen</button>
-      <p id="feedback"></p>
+      <p id="question-type"></p>
+      <p id="question-text"></p>
+      <p id="country-name"></p>
+      <div id="answer-section">
+        <input type="text" id="answerInput" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+        <div id="multipleChoice" class="hidden"></div>
+      </div>
+      <button id="submitAnswer">Prüfen</button>
+      <p id="feedbackCard" class="hidden">
+        <span id="feedbackResult"></span>
+        <span id="feedbackText"></span>
+        <span id="memoryTip" class="memory-tip hidden"></span>
+      </p>
     </div>
 
-    <button id="back-to-start">Zurück zur Auswahl</button>
+    <button id="backToStart">Zurück zur Auswahl</button>
   </main>
 
   <main id="progress" class="section hidden">
     <h2>Dein Lernfortschritt</h2>
-    <div id="progress-details"></div>
-    <button id="progress-back">Zurück</button>
+    <div id="progressDetails"></div>
+    <button id="progressBack">Zurück</button>
   </main>
 
   <main id="learn" class="section hidden">
-    <h2>Lernmodus (Demo)</h2>
-    <p>Hier kannst du später deine Lernkarten durchgehen.</p>
-    <button id="learn-back">Zurück</button>
+    <h2>Lernmodus</h2>
+    <p>Hier kannst du deine Lernkarten durchgehen.</p>
+    <div id="cardsContainer"></div>
+    <button id="learnBack">Zurück</button>
   </main>
 
   <main id="settings" class="section hidden">
     <h2>Einstellungen</h2>
-    <p>Einstellungen werden hier gespeichert.</p>
-    <button id="settings-back">Zurück</button>
+    <p>Hier kannst du Einstellungen vornehmen.</p>
+    <button id="settingsBack">Zurück</button>
   </main>
+
+  <div id="loadingScreen" class="loading-screen hidden">
+    <div class="loading-content">
+      <div class="loading-spinner"></div>
+      <p>Lade Daten ...</p>
+    </div>
+  </div>
+
+  <div id="successAnimation" class="success-animation hidden">
+    <div class="success-content">
+      <div class="success-icon">✔</div>
+      <p>Richtige Antwort!</p>
+    </div>
+  </div>
 
   <script src="app.js" defer></script>
 </body>
